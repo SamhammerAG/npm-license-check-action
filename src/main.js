@@ -1,27 +1,45 @@
 const core = require("@actions/core");
 const licenseChecker = require("license-checker-rseidelsohn");
-const join = require("lodash/join");
+const padEnd = require("lodash/padEnd");
+const foreach = require("lodash/forEach");
+const argv = require('minimist')(process.argv.slice(2));
 
 try {
-  const licenseWhitelist = core.getInput("licenseWhitelist");
-
+  const licenseWhitelist = argv.licenseWhitelist ?? core.getInput("licenseWhitelist");
+  const startPath = argv.path ?? core.getInput("path");
+  
   licenseChecker.init(
     {
-      start: ".",
-      direct: true,
+      start: startPath, 
+      direct: 0,
       production: true,
       development: false,
       excludePrivatePackages: true,
-      onlyAllow: licenseWhitelist      
+      onlyAllow: licenseWhitelist
     },
     (error, packages) => {
       if (error) {
         throw error;
       } else {
-        throw new Error(`license check failed on packages: ${join(Object.keys(packages), ";")}`);
+        // output calculations
+        const metaData = { name: 0, licenses: 0 };
+        foreach(packages, (package, name) => {
+          metaData.name = Math.max(metaData.name, name.length);
+          metaData.licenses = Math.max(metaData.licenses, package.licenses.length);
+        });
+
+        // output headline
+        console.log(`| ${ padEnd("Package", metaData.name)} | ${padEnd("License", metaData.licenses)} |`);
+        console.log(`|-${ padEnd("", metaData.name,"-")}---${padEnd("", metaData.licenses, "-")}-|`);
+
+        // output packages
+        foreach(packages, (package, name) => {
+          console.log(`| ${ padEnd(name, metaData.name)} | ${padEnd(package.licenses, metaData.licenses)} |`);
+        });
       }
     }
   );
 } catch (error) {
   core.setFailed(error.message);
 }
+

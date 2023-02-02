@@ -173,7 +173,7 @@ json-parse-even-better-errors@^2.3.0:
   resolved "https://registry.yarnpkg.com/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz#7c47805a94319928e05777405dc12e1f7a4ee02d"
   integrity sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==
 
-license-checker-rseidelsohn@3.3.0:
+license-checker-rseidelsohn@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/license-checker-rseidelsohn/-/license-checker-rseidelsohn-3.3.0.tgz#37b38512ceef89e5fb10b35af6573ec6fcc0bac6"
   integrity sha512-BUiUTnaC8nvOvs4mfMrK89S/ib6u9I40IVTEEmazdHEZxgkxOdZntcHLEWlRDzxT6f23e3NdLoU940UXwC0Uzg==
@@ -213,6 +213,11 @@ minimatch@^3.1.1:
   integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
   dependencies:
     brace-expansion "^1.1.7"
+
+minimist@^1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.7.tgz#daa1c4d91f507390437c6a8bc01078e7000c4d18"
+  integrity sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==
 
 mkdirp@^1.0.4:
   version "1.0.4"
