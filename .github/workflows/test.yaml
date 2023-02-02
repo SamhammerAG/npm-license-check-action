@@ -10,12 +10,15 @@ jobs:
     timeout-minutes: 1
     steps:
     - uses: actions/checkout@v3
-    - id: check_success
+    - id: licenses_valid
       uses: ./
       with:
         licenseWhitelist: MIT;BSD-3-Clause
-    - id: check_fail
+    - id: licenses_invalid
       uses: ./
       with:
         licenseWhitelist: NONE
       continue-on-error: true
+    - name: licenses_invalid check failed
+      if: steps.licenses_invalid.outcome != 'failure'
+      run: exit 1
