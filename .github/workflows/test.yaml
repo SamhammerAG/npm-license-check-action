@@ -9,6 +9,12 @@ jobs:
     timeout-minutes: 1
     steps:
     - uses: actions/checkout@v3
-    - uses: ./
+    - id: check_success
+      uses: ./
       with:
-        licenseWhitelist: 'MIT'
+        licenseWhitelist: MIT;BSD-3-Clause
+    - id: check_fail
+      uses: ./
+      with:
+        licenseWhitelist: NONE
+      continue-on-error: true
