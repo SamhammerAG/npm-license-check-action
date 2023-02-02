@@ -14,12 +14,12 @@ jobs:
     - name: license-check-action with valid
       uses: ./
       with:
-        licenseWhitelist: MIT;BSD-3-Clause
+        allowedLicenses: MIT;BSD-3-Clause
     - name: license-check-action with invalid
       id: license_invalid
       uses: ./
       with:
-        licenseWhitelist: NONE
+        allowedLicenses: NONE
       continue-on-error: true
     - name: license-check-action with invalid did not fail
       if: steps.license_invalid.outcome != 'failure'

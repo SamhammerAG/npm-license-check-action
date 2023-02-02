@@ -7,9 +7,9 @@
   "license": "MIT",
   "scripts": {
     "build": "ncc build src/main.js",
-    "run-valid": "node src/main.js --path . --licenseWhitelist MIT;BSD-3-Clause",
-    "run-invalid": "node src/main.js --path . --licenseWhitelist NONE",
-    "run-empty": "node src/main.js --path ."
+    "run-valid": "node src/main.js --packageDir . --allowedLicenses MIT;BSD-3-Clause",
+    "run-invalid": "node src/main.js --packageDir . --allowedLicenses NONE",
+    "run-empty": "node src/main.js --packageDir ."
   },
   "dependencies": {
     "@actions/core": "^1.10.0",

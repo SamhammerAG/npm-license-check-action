@@ -1,13 +1,13 @@
 name: 'npm-license-check-action'
 description: 'check licenses of npm packages'
 inputs:
-  path:
+  packageDir:
     description: 'Directory with package.json to check'
     default: '.'
     required: true  
-  licenseWhitelist:
-    description: 'List of allowed licenses'
-    required: true
+  allowedLicenses:
+    description: 'Allowed licenses as SPDX list e.g. MIT;Apache-2.0'
+    required: false
 runs:
   using: 'node16'
   main: 'dist/index.js'

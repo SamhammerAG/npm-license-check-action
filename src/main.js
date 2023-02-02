@@ -5,17 +5,17 @@ const foreach = require("lodash/forEach");
 const argv = require('minimist')(process.argv.slice(2));
 
 try {
-  const licenseWhitelist = argv.licenseWhitelist ?? core.getInput("licenseWhitelist");
-  const startPath = argv.path ?? core.getInput("path");
+  const allowedLicenses = argv.allowedLicenses ?? core.getInput("allowedLicenses");
+  const packageDir = argv.packageDir ?? core.getInput("packageDir");
   
   licenseChecker.init(
     {
-      start: startPath, 
+      start: packageDir,
       direct: 0,
       production: true,
       development: false,
       excludePrivatePackages: true,
-      onlyAllow: licenseWhitelist
+      onlyAllow: allowedLicenses
     },
     (error, packages) => {
       if (error) {
