@@ -21221,15 +21221,17 @@ try {
       if (error) {
         throw error;
       } else {
+        const headline = { name: "Package", licenses: "License Type" };
+
         // output calculations
         const metaData = { name: 0, licenses: 0 };
         foreach(packages, (package, name) => {
-          metaData.name = Math.max(metaData.name, name.length);
-          metaData.licenses = Math.max(metaData.licenses, package.licenses.length);
+          metaData.name = Math.max(metaData.name, name.length, headline.name.length);
+          metaData.licenses = Math.max(metaData.licenses, package.licenses.length, headline.licenses.length);
         });
 
         // output headline
-        console.log(`| ${ padEnd("Package", metaData.name)} | ${padEnd("License", metaData.licenses)} |`);
+        console.log(`| ${ padEnd(headline.name, metaData.name)} | ${padEnd(headline.licenses, metaData.licenses)} |`);
         console.log(`|-${ padEnd("", metaData.name,"-")}---${padEnd("", metaData.licenses, "-")}-|`);
 
         // output packages
