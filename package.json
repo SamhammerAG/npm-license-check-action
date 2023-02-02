@@ -1,0 +1,19 @@
+{
+  "name": "npm-license-check-action",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:SamhammerAG/npm-license-check-action.git",
+  "author": "Roland Schmitt <rschmitt@samhammer.de>",
+  "license": "MIT",
+  "scripts": {
+    "build": "ncc build src/main.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "license-checker-rseidelsohn": "3.3.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.36.1"
+  }
+}
