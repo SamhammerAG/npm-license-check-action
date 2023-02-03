@@ -1,5 +1,5 @@
 # license-check-npm
-This action checks licenses of npm packages and fails if finding licenses that are not allowed.
+This action checks licenses of npm packages and fails if finding licenses that are not allowed.\
 It also shows an overview of packages with license information.
 
 The action checks
