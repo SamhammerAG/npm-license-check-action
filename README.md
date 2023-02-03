@@ -1,6 +1,7 @@
-# license-check-npm
+# npm-license-check-action
 This action checks licenses of npm packages and fails if finding licenses that are not allowed.\
-It also shows an overview of packages with license information.
+It also shows an overview of packages with license information.\
+We are using [license-checker](https://github.com/RSeidelsohn/license-checker-rseidelsohn) to do the checks.
 
 The action checks
 - production dependencies (ignores dev dependencies)
