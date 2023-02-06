@@ -36234,7 +36234,7 @@ function run() {
             const packageDir = (_b = argv.packageDir) !== null && _b !== void 0 ? _b : core.getInput("packageDir");
             const options = {
                 start: packageDir,
-                direct: false,
+                direct: 0,
                 production: true,
                 development: false,
                 excludePrivatePackages: true,
