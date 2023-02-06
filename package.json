@@ -6,10 +6,10 @@
   "author": "Roland Schmitt <rschmitt@samhammer.de>",
   "license": "MIT",
   "scripts": {
-    "build": "ncc build src/main.js",
-    "run-valid": "node src/main.js --packageDir . --allowedLicenses MIT;BSD-3-Clause",
-    "run-invalid": "node src/main.js --packageDir . --allowedLicenses NONE",
-    "run-empty": "node src/main.js --packageDir ."
+    "build": "ncc build src/main.ts",
+    "run-valid": "ncc build src/main.ts && node dist/index.js --packageDir . --allowedLicenses MIT;BSD-3-Clause",
+    "run-invalid": "ncc build src/main.ts && node dist/index.js --packageDir . --allowedLicenses NONE",
+    "run-empty": "ncc build src/main.ts && node dist/index.js --packageDir ."
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
@@ -18,6 +18,10 @@
     "minimist": "^1.2.7"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.36.1"
+    "@types/lodash": "^4.14.191",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.11.19",
+    "@vercel/ncc": "^0.36.1",
+    "typescript": "^4.9.5"
   }
 }
