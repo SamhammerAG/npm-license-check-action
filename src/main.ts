@@ -66,6 +66,8 @@ async function output(data: ModuleOutput[]): Promise<void> {
 
 async function html(data: ModuleOutput[], outDir: string): Promise<void> {
   const outFile = path.join(outDir, "licenses.html");
+  console.log("Exporting licenses to ", outFile);
+
   const templateFile = path.join(__dirname, "..", "export.mustache");
   const template: string = await fs.promises.readFile(templateFile, { encoding: "utf-8" });
 

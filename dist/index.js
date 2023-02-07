@@ -37073,6 +37073,7 @@ function output(data) {
 function html(data, outDir) {
     return __awaiter(this, void 0, void 0, function* () {
         const outFile = path.join(outDir, "licenses.html");
+        console.log("Exporting licenses to ", outFile);
         const templateFile = path.join(__dirname, "..", "export.mustache");
         const template = yield fs.promises.readFile(templateFile, { encoding: "utf-8" });
         const output = mustache_1.default.render(template, data);
