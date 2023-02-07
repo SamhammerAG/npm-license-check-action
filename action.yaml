@@ -4,7 +4,10 @@ inputs:
   packageDir:
     description: 'Directory with package.json to check'
     default: '.'
-    required: true  
+    required: true
+  exportDir:
+    description: 'Directory where licenses.html should be exported to'
+    required: false
   allowedLicenses:
     description: 'Allowed licenses as SPDX list e.g. MIT;Apache-2.0'
     required: false
