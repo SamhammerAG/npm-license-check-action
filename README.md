@@ -17,6 +17,7 @@ see action definition [action.yaml](action.yaml)
 uses: SamhammerAG/npm-license-check-action@v1
 with:
   packageDir: 'sources/app'
+  exportDir: 'sources/app/public'
   allowedLicenses: 'MIT;Apache-2.0'
 ```
 
