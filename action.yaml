@@ -12,5 +12,5 @@ inputs:
     description: 'Allowed licenses as SPDX list e.g. MIT;Apache-2.0'
     required: false
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
